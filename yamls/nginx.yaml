@@ -11,6 +11,7 @@ spec:
       labels:
         app: centos
     spec:
+      replicas: 5
       containers:
       - name: centos
         image: centos:8
