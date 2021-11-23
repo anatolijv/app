@@ -1,0 +1,21 @@
+aapiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: nginx
+  name: nginx
+  namespace: app
+spec:
+  containers:
+  - image: nginx
+    imagePullPolicy: Always
+    name: nginx
+    resources:
+      limits:
+        cpu: '1'
+        memory: '250Mig'
+    stdin: true
+    stdinOnce: true
+    terminationMessagePath: /dev/termination-log
+    terminationMessagePolicy: File
+    tty: true
