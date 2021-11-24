@@ -17,7 +17,7 @@ spec:
             name: nginx
             port:
               number: 80
-        path: /api
+        path: /
         pathType: ImplementationSpecific
   tls:
   - hosts:
