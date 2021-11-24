@@ -3,7 +3,7 @@ kind: ConfigMap
 metadata:
   name: index1-html
 data:
-  index1.html: |
+  index.html: |
     <html>
     <h1>Hello</h1>
     <p>This is version 1</p>
