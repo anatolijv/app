@@ -1,25 +1,38 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: centos
+  name: nginx
 spec:
   selector:
     matchLabels:
-      app: centos
+      app: nginx
   replicas: 5
   template:
     metadata:
       labels:
-        app: centos
+        app: nginx
     spec:
       containers:
-      - name: centos
-        image: centos:8
-        command: [ "/bin/bash" ]
-        args: ["-c", "while true; do echo 1; done"]
+      - name: nginx
+        image: nginx
         resources:
           limits:
             memory: "128Mi"
             cpu: "700m"
         ports:
-        - containerPort: 22
+        - containerPort: 80
+        volumeMounts:
+          - name: index1.html
+            mountPath: "/usr/share/nginx/html"
+            subPath: index1.html
+          - name: nginx.conf
+            mountPath: "/etc/nginx/"
+            subPath: nginx.conf
+
+      volumes:
+        - name: index1.html
+          configMap:
+              name: index1.html
+        - name: nginex.conf
+          configMap:
+            name: nginx.conf
