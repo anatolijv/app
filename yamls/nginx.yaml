@@ -22,17 +22,17 @@ spec:
         ports:
         - containerPort: 80
         volumeMounts:
-          - name: index1.html
+          - name: index1-html
             mountPath: "/usr/share/nginx/html"
             subPath: index1.html
-          - name: nginx.conf
+          - name: nginx-conf
             mountPath: "/etc/nginx/"
             subPath: nginx.conf
 
       volumes:
-        - name: index1.html
+        - name: index1-html
           configMap:
               name: index1.html
-        - name: nginex.conf
+        - name: nginx-conf
           configMap:
             name: nginx.conf
