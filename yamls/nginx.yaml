@@ -32,7 +32,7 @@ spec:
       volumes:
         - name: index1-html
           configMap:
-              name: index1.html
+              name: index1-html
         - name: nginx-conf
           configMap:
-            name: nginx.conf
+            name: nginx-conf
