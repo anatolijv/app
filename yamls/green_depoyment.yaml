@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-green
+  labels:
+    app: nginx
+    run: bluegreen
+    group: bgreen
+spec:
+  selector:
+    matchLabels:
+      app: nginx
+      run: bluegreen
+      group: green
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: nginx
+        run: bluegreen
+        group: green
+    spec:
+      containers:
+      - name: nginx-green
+        image: nginx
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 80
+        volumeMounts:
+          - name: index-green-html
+            mountPath: "/usr/share/nginx/html/index.html"
+            subPath: index.html
+          - name: nginx-conf
+            mountPath: "/etc/nginx/nginx.conf"
+            subPath: nginx.conf
+
+      volumes:
+        - name: index-green-html
+          configMap:
+              name: index-green-html
+        - name: nginx-conf
+          configMap:
+            name: nginx-conf

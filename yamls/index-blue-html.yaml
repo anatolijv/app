@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: index-blue-html
+data:
+  index.html: |
+    <html>
+    <h1>Hello</h1>
+    <p>This is blue POD</p>
+    </html>

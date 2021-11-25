@@ -1,11 +1,10 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: index1-html
+  name: index-green-html
 data:
   index.html: |
     <html>
     <h1>Hello</h1>
-    <p>This is version 1</p>
+    <p>This is green POD</p>
     </html>
-    

@@ -1,28 +1,32 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx
+  name: nginx-blue
 spec:
   selector:
     matchLabels:
       app: nginx
-  replicas: 5
+      run: bluegreen
+      group: blue
+  replicas: 1
   template:
     metadata:
       labels:
         app: nginx
+        run: bluegreen
+        grou: blue
     spec:
       containers:
-      - name: nginx
+      - name: nginx-blue
         image: nginx
         resources:
           limits:
             memory: "128Mi"
-            cpu: "700m"
+            cpu: "500m"
         ports:
         - containerPort: 80
         volumeMounts:
-          - name: index1-html
+          - name: index-blue-html
             mountPath: "/usr/share/nginx/html/index.html"
             subPath: index.html
           - name: nginx-conf
@@ -30,9 +34,9 @@ spec:
             subPath: nginx.conf
 
       volumes:
-        - name: index1-html
+        - name: index-blue-html
           configMap:
-              name: index1-html
+              name: index-blue-html
         - name: nginx-conf
           configMap:
             name: nginx-conf
