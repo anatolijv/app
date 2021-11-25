@@ -20,15 +20,14 @@ spec:
   #  labels:
   #    my-secret-label: foo
 
-  duration: 2160h # 90d
-  renewBefore: 360h # 15d
+  duration: 2160h0m0s # 90d
+  renewBefore: 360h0m0s # 15d
   subject:
     organizations:
       - Anatolii Voitov
   # The use of the common name field has been deprecated since 2000 and is
   # discouraged from being used.
   commonName: api.viaf.pp.ua
-  isCA: false
   privateKey:
     algorithm: RSA
     encoding: PKCS1
