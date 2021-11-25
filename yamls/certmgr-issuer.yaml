@@ -16,5 +16,4 @@ spec:
     solvers:
     - http01:
         ingress:
-          class: haproxy
           name: nginx-lnb
