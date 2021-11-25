@@ -14,7 +14,7 @@ spec:
       labels:
         app: nginx
         run: bluegreen
-        grou: blue
+        group: blue
     spec:
       containers:
       - name: nginx-blue
