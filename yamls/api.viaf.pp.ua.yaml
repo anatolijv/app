@@ -39,6 +39,7 @@ spec:
   # At least one of a DNS Name, URI, or IP address is required.
   dnsNames:
     - api.viaf.pp.ua
+    - www.api.viaf.pp.ua
   #uris:
   #  - spiffe://cluster.local/ns/sandbox/sa/example
   #ipAddresses:
