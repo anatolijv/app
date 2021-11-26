@@ -22,13 +22,13 @@ spec:
     spec:
       containers:
       - name: nginx-green
-        image: nginx
+        image: avoitov/app_green
         resources:
           limits:
             memory: "128Mi"
             cpu: "500m"
         ports:
-        - containerPort: 80
+        - containerPort: 5000
         volumeMounts:
           - name: index-green-html
             mountPath: "/usr/share/nginx/html/index.html"

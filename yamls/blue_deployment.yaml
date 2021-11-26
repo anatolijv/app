@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - name: nginx-blue
-        image: nginx
+        image: avoitov/app_blue
         resources:
           limits:
             memory: "128Mi"
