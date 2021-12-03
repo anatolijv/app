@@ -8,7 +8,7 @@ metadata:
     haproxy-ingress.github.io/balance-algorithm: roundrobin
     haproxy-ingress.github.io/blue-green-deploy: group=blue=1,group=green=1
     haproxy-ingress.github.io/blue-green-mode: pod
-    haproxy.org/path-rewrite: "/"
+    #haproxy.org/path-rewrite: "/"
   name: nginx-lnb-api
 spec:
   ingressClassName: haproxy
