@@ -21,7 +21,7 @@ spec:
             name: nginx
             port:
               number: 5000
-        path: /home
+        path: /
         pathType: ImplementationSpecific
   tls:
   - hosts:
