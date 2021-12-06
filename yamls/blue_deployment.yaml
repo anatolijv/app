@@ -24,12 +24,12 @@ spec:
             memory: "128Mi"
             cpu: "500m"
         ports:
-        - containerPort: 80
-        #livenessProbe:
-        #  failureThreshold: 3
-        #  httpGet:
-        #    port: 80
-        #    path: /
+        - containerPort: 5000
+        livenessProbe:
+          failureThreshold: 3
+          httpGet:
+            port: 5000
+            path: /
         volumeMounts:
           - name: index-blue-html
             mountPath: "/usr/share/nginx/html/index.html"
