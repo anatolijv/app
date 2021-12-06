@@ -3,7 +3,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   annotations:
-    #haproxy.org/cookie-persistence: ServerLNB
+    haproxy.org/cookie-persistence: ServerLNB
     ingress.class: haproxy
     haproxy-ingress.github.io/balance-algorithm: roundrobin
     haproxy-ingress.github.io/blue-green-deploy: group=blue=1,group=green=1
