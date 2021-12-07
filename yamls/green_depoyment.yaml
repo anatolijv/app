@@ -24,9 +24,10 @@ spec:
         runAsUser: 5000
         runAsGroup: 5000
         runAsNonRoot: true
-        allowPrivilegeEscalation: false
       containers:
       - name: nginx-green
+        securityContext:
+          allowPrivilegeEscalation: false
         image: avoitov/app_green
         resources:
           limits:
