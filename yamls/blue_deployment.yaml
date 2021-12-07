@@ -22,6 +22,9 @@ spec:
         runAsNonRoot: true
       containers:
       - name: nginx-blue
+        securityContext:
+          allowPrivilegeEscalation: false
+          readOnlyRootFilesystem: true
         image: avoitov/app_blue:0.0.8
         resources:
           limits:
