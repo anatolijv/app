@@ -16,6 +16,10 @@ spec:
         run: bluegreen
         group: blue
     spec:
+      securityContext:
+        runAsUser: 5000
+        runAsGroup: 5000
+        runAsNonRoot: true
       containers:
       - name: nginx-blue
         image: avoitov/app_blue:0.0.8
