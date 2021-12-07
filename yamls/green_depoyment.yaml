@@ -14,17 +14,17 @@ spec:
       group: green
   replicas: 1
   template:
-    securityContext:
-      allowPrivelegeEscalation: false
-      runAsUser: 5000
-      runAsGroup: 5000
-      runAsNonRoot: true
     metadata:
       labels:
         app: nginx
         run: bluegreen
         group: green
     spec:
+      securityContext:
+        runAsUser: 5000
+        runAsGroup: 5000
+        runAsNonRoot: true
+        allowPrivilegeEscalation: false
       containers:
       - name: nginx-green
         image: avoitov/app_green
