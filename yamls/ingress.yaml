@@ -12,6 +12,7 @@ metadata:
     haproxy.org/backend-config-snippet: |
       use_backend default if { path -i -m  /evil/ } || { path -i -m end /evil }
       http-request redirect location https://google.com if { path -i -m beg /evil/ } || { path -i -m end /evil }
+      
     #haproxy.org/path-rewrite: "/"
   name: nginx-lnb-api
 spec:
