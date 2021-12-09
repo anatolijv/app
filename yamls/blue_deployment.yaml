@@ -8,7 +8,7 @@ spec:
       app: nginx
       run: bluegreen
       group: blue
-  replicas: 9
+  replicas: 2
   template:
     metadata:
       labels:
