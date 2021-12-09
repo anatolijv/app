@@ -9,6 +9,8 @@ metadata:
     haproxy-ingress.github.io/blue-green-deploy: group=blue=1,group=green=1
     haproxy-ingress.github.io/blue-green-mode: pod
     haproxy.org/src-ip-header: "True-Client-IP"
+    haproxy.org/backend-config-snippet: |
+      http-request deny if { path -i -m beg /evil/ } || { path -i -m end /evil }
     #haproxy.org/path-rewrite: "/"
   name: nginx-lnb-api
 spec:
